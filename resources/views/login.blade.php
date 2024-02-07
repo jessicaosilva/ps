@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulário de Login</title>
+        <title>Login de Usuário</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
-    <body>
 
+    <body>
         <div class="background">
             <div class="container">
                 <div class="row justify-content-center align-items-center" style="height: 100vh;">
@@ -20,13 +20,12 @@
                             <div class="text-center mt-3">
                                 <a href="esqueceu_senha.blade.php">Esqueceu a senha?</a>
                                 <hr>
-                                <button type="button" class="btn btn-success btn-lg btn-block" onclick="window.location.href='usuario.blade.php'">Cadastre-se</button>
+                                <button type="button" class="btn btn-success btn-lg btn-block" onclick="window.location.href='{{ route('cadastro') }}'">Cadastre-se</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
     </body>
 </html>
