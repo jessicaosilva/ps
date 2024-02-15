@@ -31,7 +31,7 @@
                     <!-- Linhas de usuários -->
                     <tr>
                         <td>Jessica Oliveira</td>
-                        <td>1990-01-01</td>
+                        <td>01/01/1990</td>
                         <td>Brasil</td>
                         <td>São Paulo</td>
                         <td>jessolie</td>
@@ -39,7 +39,7 @@
                     </tr>
                     <tr>
                         <td>Rebeca Feitosa</td>
-                        <td>1985-05-15</td>
+                        <td>15/05/1985</td>
                         <td>Brasil</td>
                         <td>São Paulo</td>
                         <td>aaceber</td>
@@ -47,7 +47,7 @@
                     </tr>
                     <tr>
                         <td>Maria Silva</td>
-                        <td>1978-12-20</td>
+                        <td>20/12/1978</td>
                         <td>Brasil</td>
                         <td>Rio de Janeiro</td>
                         <td>mariasilva</td>
@@ -55,7 +55,7 @@
                     </tr>
                     <tr>
                         <td>João Santos</td>
-                        <td>1982-08-07</td>
+                        <td>07/08/1987</td>
                         <td>Brasil</td>
                         <td>Minas Gerais</td>
                         <td>joaosantos</td>
@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <td>Michael Johnson</td>
-                        <td>1976-03-25</td>
+                        <td>25/03/1973</td>
                         <td>Brasil</td>
                         <td>Bahia</td>
                         <td>michaelj</td>
@@ -71,7 +71,7 @@
                     </tr>
                     <tr>
                         <td>Ana Oliveira</td>
-                        <td>1988-09-10</td>
+                        <td>10/09/1998</td>
                         <td>Brasil</td>
                         <td>Alagoas</td>
                         <td>anao</td>
