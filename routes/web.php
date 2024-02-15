@@ -24,3 +24,7 @@ Route::get('/login', function () {
 Route::get('/cadastro', function () {
     return view('usuario');
 })->name('cadastro');
+
+Route::get('/listagem', function () {
+    return view('listagem');
+});
