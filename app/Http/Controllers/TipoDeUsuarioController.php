@@ -8,9 +8,10 @@ use Illuminate\Http\Response;
 
 class TipoDeUsuarioController extends Controller
 {
-    public static function getListTipoDeUsuario(Request $request, $totalPage = 10, $currentPage = 1) {
+    public static function getListTipoDeUsuario($totalPage = null, $currentPage = null) {
         try {
-            if ($request->path() == 'api/tipoDeUsuarios') {
+            
+            if ($totalPage == null && $currentPage == null) {
                 $list = TipoDeUsuario::getListTipoDeUsuario(false);
             } else {
                 $list = TipoDeUsuario::getListTipoDeUsuario(true, $totalPage, $currentPage);

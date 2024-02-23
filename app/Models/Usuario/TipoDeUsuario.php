@@ -21,7 +21,6 @@ class TipoDeUsuario extends Model
 
     public static function getListTipoDeUsuario($paginate = false, $totalPage = 10, $currentPage = 1) {
         try {
-
             $return = [];
             $columns = ["TipoUsuarioID as ID", "Tipo as Descricao"];
             $list = self::select($columns);
