@@ -19,21 +19,38 @@ class TipoDeUsuario extends Model
         'TipoUsuarioID',
     ];
 
-    public static function getListTipoDeUsuario() {
+    public static function getListTipoDeUsuario($paginate = false, $totalPage = 10, $currentPage = 1) {
         try {
-            
-            $list = self::select("TipoUsuarioID as ID", "Tipo as Descricao")
-            ->paginate(10);
 
-            return response()->json([
-                "data" => $list->items(),
-                "message" => "Lista de usuários carregada com sucesso.",
-                "status" => "success",
-                "total" => $list->total(),
-                "currentPage" => $list->currentPage(),
-                "lastPage" => $list->lastPage(),
-            ], Response::HTTP_OK);
+            $return = [];
+            $columns = ["TipoUsuarioID as ID", "Tipo as Descricao"];
+            $list = self::select($columns);
 
+            if ($paginate) {
+                $list = $list->paginate($totalPage, $columns, 'page', $currentPage);
+
+                $return =[
+                    "data" => $list->items(),
+                    "message" => "Lista de usuários carregada com sucesso.",
+                    "status" => "success",
+                    "total" => $list->total(),
+                    "currentPage" => $list->currentPage(),
+                    "lastPage" => $list->lastPage(),
+                ];
+
+            } else {
+                $list = $list->get()->toArray();
+
+                $return =[
+                    "data" => $list,
+                    "message" => "Lista de usuários carregada com sucesso.",
+                    "status" => "success",
+                    "total" => count($list),
+                ];
+            }
+
+            return response()->json($return, Response::HTTP_OK);
+           
         } catch (\Exception $ex) {
             return response()->json([
                 "data" => [],
