@@ -10,7 +10,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('tipoDeUsuarios')->group(function () {
     Route::get('/', [TipoDeUsuarioController::class, 'getListTipoDeUsuario']);
-    Route::get('/{totalpage}/{currentPage}', [TipoDeUsuarioController::class, 'getListTipoDeUsuario']);
+    Route::get('/{totalPage}/{currentPage}', [TipoDeUsuarioController::class, 'getListTipoDeUsuario']);
     Route::get('/{id}', [TipoDeUsuarioController::class, 'getTipoDeUsuario']);
     Route::delete('/{id}', [TipoDeUsuarioController::class, 'deleteTipoDeUsuario']);
     Route::post('/', [TipoDeUsuarioController::class, 'createTipoDeUsuario']);
