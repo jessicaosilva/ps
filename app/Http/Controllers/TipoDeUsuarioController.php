@@ -17,7 +17,7 @@ class TipoDeUsuarioController extends Controller
                 $list = TipoDeUsuario::getListTipoDeUsuario(true, $totalPage, $currentPage);
             }
 
-            return $list;
+            return response()->json($list, Response::HTTP_OK);
             
         } catch (\Exception $ex) {
             return response()->json([
@@ -33,7 +33,7 @@ class TipoDeUsuarioController extends Controller
         try {
             $tipoUsuario = TipoDeUsuario::getTipoDeUsuario($id);
 
-            return $tipoUsuario;
+            return response()->json($tipoUsuario, Response::HTTP_OK);
             
         } catch (\Exception $ex) {
             return response()->json([
@@ -50,7 +50,7 @@ class TipoDeUsuarioController extends Controller
             $values = $request->all();
             $create = TipoDeUsuario::createTipoDeUsuario($values);
 
-            return $create;
+            return response()->json($create, Response::HTTP_OK);
             
         } catch (\Exception $ex) {
             return response()->json([
@@ -67,7 +67,7 @@ class TipoDeUsuarioController extends Controller
             $values = $request->all();
             $update = TipoDeUsuario::updateTipoDeUsuario($values);
 
-            return $update;
+            return response()->json($update, Response::HTTP_OK);
             
         } catch (\Exception $ex) {
             return response()->json([
@@ -80,11 +80,11 @@ class TipoDeUsuarioController extends Controller
     }
 
 
-    public static function deleteTipoDeUsuario(Request $request, $id) {
+    public static function deleteTipoDeUsuario($id) {
         try {
             $delete = TipoDeUsuario::deleteTipoDeUsuario($id);
 
-            return $delete;
+            return response()->json($delete, Response::HTTP_OK);
             
         } catch (\Exception $ex) {
             return response()->json([

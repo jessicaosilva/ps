@@ -21,14 +21,14 @@ class TipoDeUsuario extends Model
 
     public static function getListTipoDeUsuario($paginate = false, $totalPage = 10, $currentPage = 1) {
         try {
-            $return = [];
+            $result = [];
             $columns = ["TipoUsuarioID as ID", "Tipo as Descricao"];
             $list = self::select($columns);
 
             if ($paginate) {
                 $list = $list->paginate($totalPage, $columns, 'page', $currentPage);
 
-                $return =[
+                $result =[
                     "data" => $list->items(),
                     "message" => "Lista de usuários carregada com sucesso.",
                     "status" => "success",
@@ -40,7 +40,7 @@ class TipoDeUsuario extends Model
             } else {
                 $list = $list->get()->toArray();
 
-                $return =[
+                $result =[
                     "data" => $list,
                     "message" => "Lista de usuários carregada com sucesso.",
                     "status" => "success",
@@ -48,7 +48,7 @@ class TipoDeUsuario extends Model
                 ];
             }
 
-            return response()->json($return, Response::HTTP_OK);
+            return $result;
            
         } catch (\Exception $ex) {
             return response()->json([
@@ -68,11 +68,13 @@ class TipoDeUsuario extends Model
             ->get()
             ->toArray();
 
-            return response()->json([
+            $result = [
                 "data" => $tipoUsuario,
                 "message" => "Tipo de Usuário carregado com sucesso.",
                 "status" => "success",
-            ], Response::HTTP_OK);
+            ];
+            
+            return $result;
 
         } catch (\Exception $ex) {
             return response()->json([
@@ -91,11 +93,13 @@ class TipoDeUsuario extends Model
             $obj->Tipo = $values['descricao'];
             $create = $obj->save($values);
 
-            return response()->json([
+            $result = [
                 "data" => $create,
                 "message" => "Tipo de usuário criado com sucesso.",
                 "status" => "success",
-            ], Response::HTTP_OK);
+            ];
+
+            return $result;
 
         } catch (\Exception $ex) {
             return response()->json([
@@ -110,23 +114,25 @@ class TipoDeUsuario extends Model
     public static function updateTipoDeUsuario($values) {
         try {
 
-            $result = TipoDeUsuario::where("TipoUsuarioID", $values['id'])
+            $update = TipoDeUsuario::where("TipoUsuarioID", $values['id'])
                 ->update(['Tipo' => $values['descricao']]);
 
-            if ($result) {
-                return response()->json([
+            if ($update) {
+                $return = [
                     "data" => [],
                     "message" => "Tipo de usuário alterado com sucesso.",
                     "status" => "success",
-                ], Response::HTTP_OK);
+                ];
                 
             } else {
-                return response()->json([
+                $return = [
                     "data" => [],
                     "message" => "Tipo de usuário não encontrado para alterar.",
                     "status" => "success",
-                ], Response::HTTP_NOT_FOUND);
+                ];
             }
+
+            return $return;
 
         } catch (\Exception $ex) {
             return response()->json([
@@ -143,11 +149,13 @@ class TipoDeUsuario extends Model
             
             $delete = self::where('TipoUsuarioID', $id)->delete();
 
-            return response()->json([
+            $result = [
                 "data" => $delete,
                 "message" => "Tipo de usuário excluído com sucesso.",
                 "status" => "success",
-            ], Response::HTTP_OK);
+            ];
+
+            return $result;
 
         } catch (\Exception $ex) {
             return response()->json([
