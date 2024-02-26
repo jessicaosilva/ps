@@ -27,9 +27,17 @@ class TipoDeUsuario extends Model
 
             if ($paginate) {
                 $list = $list->paginate($totalPage, $columns, 'page', $currentPage);
+                $itemsArray = $list->items();
+
+                $itemsArray = array_map(function($item) {
+                    return [
+                        'ID' => $item->ID,
+                        'Descricao' => $item->Descricao,
+                    ];
+                }, $itemsArray);
 
                 $result =[
-                    "data" => $list->items(),
+                    "data" => $itemsArray,
                     "message" => "Lista de usuários carregada com sucesso.",
                     "status" => "success",
                     "total" => $list->total(),
