@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TipoDeUsuarioWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,13 @@ Route::get('/cadastro', function () {
 
 Route::get('/listagem', function () {
     return view('listagem');
+});
+
+Route::prefix('tipoDeUsuarios')->group(function () {
+    Route::get('/', [TipoDeUsuarioWebController::class, 'listTipoDeUsuario'])->name('tipoDeUsuario');
+    Route::get('/new', [TipoDeUsuarioWebController::class, 'newTipoDeUsuario'])->name('cadastroTipoDeUsuario');
+    Route::post('/', [TipoDeUsuarioWebController::class, 'createTipoDeUsuario'])->name('criarTipoDeUsuario');
+    Route::get('/edit/{id}', [TipoDeUsuarioWebController::class, 'editTipoDeUsuario'])->name('exibirTipoDeUsuario');
+    Route::put('/', [TipoDeUsuarioWebController::class, 'updateTipoDeUsuario'])->name('editarTipoDeUsuario');
+    Route::get('/delete/{id}', [TipoDeUsuarioWebController::class, 'deleteTipoDeUsuario'])->name('excluirTipoDeUsuario');
 });
