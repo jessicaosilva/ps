@@ -5,53 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Listagem de Usuários</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/listagem.css">
         <script src="https://kit.fontawesome.com/71dede5b9a.js" crossorigin="anonymous"></script>
-        <style>
-             /* Adicionar largura igual para cada coluna */
-            th,
-            td {
-                width: calc(100% / 7); /* 7 colunas, dividindo igualmente */
-                padding: 10px; /* Adicionar preenchimento de 10px */
-            }
-
-            /* Mudar de cor ao passar o mouse sobre as linhas da tabela */
-            .table-hover tbody tr:hover {
-                background-color: #f5f5f5;
-            }
-
-            /* Remover bordas e cores dos botões */
-            .btn-edit,
-            .btn-delete {
-                border: none;
-                background-color: transparent;
-                padding: 0;
-                cursor: pointer;
-            }
-
-            /* Estilo para o clique nos botões */
-            .btn-edit:focus,
-            .btn-delete:focus {
-                outline: none; /* Remover a borda de foco padrão */
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adicionar sombra */ 
-            }
-
-            /* Estilo para o hover sobre os botões */
-            .btn-edit:hover i {
-                color: blue;
-            }
-
-            .btn-delete:hover i {
-                color: red;
-            }
-
-            /* Adicionar espaço entre os botões */
-            .btn-delete {
-                margin: 0 0 0 1em;
-            }
-        </style>
     </head>
 
     <body>
+        <!-- Botão "Novo Usuário" -->
+        <button class="btn btn-primary" id="btn-add-user">Novo Usuário</button>
+
         <div class="container mt-5">
             <h2 class="text-center mb-4">Listagem de Usuários</h2>
             <table class="table table-hover">
@@ -72,7 +33,7 @@
                         <!-- Coluna de ações -->
                         <td class="actions">
                             <!-- Ícones de edição e lixeira -->
-                            <button class="edit-btn btn-edit"><i class="fa-solid fa-user-pen"></i></button>
+                            <button class="edit-btn btn-edit"><i class="fas fa-pencil-alt"></i></button>
                             <button class="delete-btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </td>
                         <!-- Informações do usuário -->
@@ -87,7 +48,7 @@
                         <!-- Coluna de ações -->
                         <td class="actions">
                             <!-- Ícones de edição e lixeira -->
-                            <button class="edit-btn btn-edit"><i class="fa-solid fa-user-pen"></i></button>
+                            <button class="edit-btn btn-edit"><i class="fas fa-pencil-alt"></i></button>
                             <button class="delete-btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </td>
                         <!-- Informações do usuário -->
@@ -102,7 +63,7 @@
                         <!-- Coluna de ações -->
                         <td class="actions">
                             <!-- Ícones de edição e lixeira -->
-                            <button class="edit-btn btn-edit"><i class="fa-solid fa-user-pen"></i></button>
+                            <button class="edit-btn btn-edit"><i class="fas fa-pencil-alt"></i></button>
                             <button class="delete-btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </td>
                         <!-- Informações do usuário -->
@@ -117,7 +78,7 @@
                         <!-- Coluna de ações -->
                         <td class="actions">
                             <!-- Ícones de edição e lixeira -->
-                            <button class="edit-btn btn-edit"><i class="fa-solid fa-user-pen"></i></button>
+                            <button class="edit-btn btn-edit"><i class="fas fa-pencil-alt"></i></button>
                             <button class="delete-btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </td>
                         <!-- Informações do usuário -->
@@ -132,7 +93,7 @@
                         <!-- Coluna de ações -->
                         <td class="actions">
                             <!-- Ícones de edição e lixeira -->
-                            <button class="edit-btn btn-edit"><i class="fa-solid fa-user-pen"></i></button>
+                            <button class="edit-btn btn-edit"><i class="fas fa-pencil-alt"></i></button>
                             <button class="delete-btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </td>
                         <!-- Informações do usuário -->
@@ -147,7 +108,7 @@
                         <!-- Coluna de ações -->
                         <td class="actions">
                             <!-- Ícones de edição e lixeira -->
-                            <button class="edit-btn btn-edit"><i class="fa-solid fa-user-pen"></i></button>
+                            <button class="edit-btn btn-edit"><i class="fas fa-pencil-alt"></i></button>
                             <button class="delete-btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </td>
                         <!-- Informações do usuário -->
