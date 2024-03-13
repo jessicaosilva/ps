@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TipoDeUsuarioWebController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/login', function () {
+Route::get('/loginRebeca', function () {
     return view('login');
 });
 
@@ -38,3 +38,7 @@ Route::prefix('tipoDeUsuarios')->group(function () {
     Route::put('/', [TipoDeUsuarioWebController::class, 'updateTipoDeUsuario'])->name('editarTipoDeUsuario');
     Route::get('/delete/{id}', [TipoDeUsuarioWebController::class, 'deleteTipoDeUsuario'])->name('excluirTipoDeUsuario');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
