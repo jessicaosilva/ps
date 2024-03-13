@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
 @section('content')
 <div class="custom-center">
