@@ -20,7 +20,7 @@
                             <div class="text-center mt-3">
                                 <a href="esqueceu_senha.blade.php">Esqueceu a senha?</a>
                                 <hr>
-                                <button type="button" class="btn btn-success btn-lg btn-block" onclick="window.location.href='{{ route('cadastro') }}'">Cadastre-se</button>
+                                <button type="button" class="btn btn-success btn-lg btn-block" href="{{ route('cadastro') }}">Cadastre-se</button>
                             </div>
                         </form>
                     </div>

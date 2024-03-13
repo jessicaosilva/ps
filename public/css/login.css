@@ -1,0 +1,11 @@
+.custom-center {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.custom-form-container {
+    width: 100%;
+    margin: auto;
+}
