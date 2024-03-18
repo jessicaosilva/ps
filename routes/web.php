@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\TipoDeUsuarioWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,10 +30,10 @@ Route::get('/listagem', function () {
 });
 
 Route::prefix('tipoDeUsuarios')->group(function () {
-    Route::get('/', [TipoDeUsuarioWebController::class, 'listTipoDeUsuario'])->name('tipoDeUsuario');
-    Route::get('/new', [TipoDeUsuarioWebController::class, 'newTipoDeUsuario'])->name('cadastroTipoDeUsuario');
-    Route::post('/', [TipoDeUsuarioWebController::class, 'createTipoDeUsuario'])->name('criarTipoDeUsuario');
-    Route::get('/edit/{id}', [TipoDeUsuarioWebController::class, 'editTipoDeUsuario'])->name('exibirTipoDeUsuario');
-    Route::put('/', [TipoDeUsuarioWebController::class, 'updateTipoDeUsuario'])->name('editarTipoDeUsuario');
-    Route::get('/delete/{id}', [TipoDeUsuarioWebController::class, 'deleteTipoDeUsuario'])->name('excluirTipoDeUsuario');
+    Route::get('/', [App\Http\Controllers\TipoDeUsuarioWebController::class, 'listTipoDeUsuario'])->name('tipoDeUsuario');
+    Route::get('/new', [App\Http\Controllers\TipoDeUsuarioWebController::class, 'newTipoDeUsuario'])->name('cadastroTipoDeUsuario');
+    Route::post('/', [App\Http\Controllers\TipoDeUsuarioWebController::class, 'createTipoDeUsuario'])->name('criarTipoDeUsuario');
+    Route::get('/edit/{id}', [App\Http\Controllers\TipoDeUsuarioWebController::class, 'editTipoDeUsuario'])->name('exibirTipoDeUsuario');
+    Route::put('/', [App\Http\Controllers\TipoDeUsuarioWebController::class, 'updateTipoDeUsuario'])->name('editarTipoDeUsuario');
+    Route::get('/delete/{id}', [App\Http\Controllers\TipoDeUsuarioWebController::class, 'deleteTipoDeUsuario'])->name('excluirTipoDeUsuario');
 });
